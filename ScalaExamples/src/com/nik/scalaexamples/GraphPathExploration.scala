@@ -23,20 +23,20 @@ object GraphPathExploration {
 	type connectionType = (Vertex,List[Edge])
 			val results:ArrayBuffer[String] = new ArrayBuffer()
 
-			/**
-			 * <p>
-			 * Explores graph based on starting vertex and target vertex. 
-			 * It uses recursion and break point is a point at which either destination vertex is found out or all reachable vertices are visited 
-			 * </p>
-			 * 
-			 * @param sourceVertex The starting point of graph exploration
-			 * @param targetVertex The destination point of graph exploration
-			 * @param visitedNodes The visited nodes which belong to a path
-			 * @param currentPath Keeps track of path under exploration
-			 * @param graph Holds edges, vertices
-			 * 
-			 */	
-			def exploreAllPaths(sourceVertex:Vertex, targetVertex:Vertex,visitedNodes:Stack[String], currentPath:String, graph:Map[Vertex,List[Edge]]) {
+		/**
+		 * <p>
+		 * Explores graph based on starting vertex and target vertex. 
+		 * It uses recursion and break point is a point at which either destination vertex is found out or all reachable vertices are visited 
+		 * </p>
+		 * 
+	   * @param sourceVertex The starting point of graph exploration
+		 * @param targetVertex The destination point of graph exploration
+		 * @param visitedNodes The visited nodes which belong to a path
+		 * @param currentPath Keeps track of path under exploration
+		 * @param graph Holds edges, vertices
+		 * 
+	   */	
+		def exploreAllPaths(sourceVertex:Vertex, targetVertex:Vertex,visitedNodes:Stack[String], currentPath:String, graph:Map[Vertex,List[Edge]]) {
 		if(sourceVertex.label.equals(targetVertex.label)) {
 			results+=currentPath
 		}
@@ -83,7 +83,7 @@ object GraphPathExploration {
 					println(path)
 				}
 	}
-	
+
 	//un-directed graph example
 	def exploreUnDirectedGraph() {
 		var graph = new ConcurrentHashMap[Vertex,List[Edge]].asScala
